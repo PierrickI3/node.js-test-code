@@ -15,7 +15,7 @@ client.loginClientCredentialsGrant(clientId, clientSecret).then(()=> {
   console.log('Connected!');
   
   // Show all queues
-  //getAllQueues();
+  getAllQueues();
 
   // Get EWT from a specific queue id
   //getEWT('c88937af-df4f-47cf-80e3-a6739afa65b5');
