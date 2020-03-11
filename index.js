@@ -15,13 +15,13 @@ client.loginClientCredentialsGrant(clientId, clientSecret).then(()=> {
   console.log('Connected!');
   
   // Show all queues
-  getAllQueues();
+  //getAllQueues();
 
   // Get EWT from a specific queue id
   //getEWT('c88937af-df4f-47cf-80e3-a6739afa65b5');
 
-  // Create a callback on a specific queue id
-  //createCallback('c88937af-df4f-47cf-80e3-a6739afa65b5', 'Pierrick', ['+33680854089']);
+  // Create a callback on a specific queue id at a specific date
+  createCallback('c88937af-df4f-47cf-80e3-a6739afa65b5', 'Pierrick', ['+33680854089'], new Date("2020-03-12T15:30:00.000Z"));
 
 }).catch((err) => {
   // Handle failure response
@@ -61,12 +61,13 @@ function getEWT(queueId) {
 }
 
 // https://developer.mypurecloud.ie/api/rest/client-libraries/javascript/ConversationsApi.html#postConversationsCallbacks
-function createCallback(queueId, name, phoneNumbers) {
+function createCallback(queueId, name, phoneNumbers, scheduledDate) {
   let apiInstance = new platformClient.ConversationsApi();
   let body = {
     queueId: queueId,
     callbackUserName: name,
     callbackNumbers: phoneNumbers,
+    callbackScheduledTime: scheduledDate
   }
 
   apiInstance.postConversationsCallbacks(body).then((data) => {
