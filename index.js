@@ -4,8 +4,8 @@
 const platformClient = require('purecloud-platform-client-v2');
 const client = platformClient.ApiClient.instance;
 
-const clientId = 'f73c5e92-850f-4569-85bb-3886f9f34be3';
-const clientSecret = 'IvMI23xGds2n41pGt2dia7P9PKpA2QEpN86vmB5UEog';
+const clientId = 'db4ca855-972b-49f5-8d26-16d3b3e5c0fd';
+const clientSecret = 'm9MjISsNOMqhiTdP71td8ZWPk6_QFVILYcMoc9Y-cp4';
 
 // Set your region/environment (depends which Genesys Cloud organization you are using)
 client.setEnvironment('mypurecloud.ie'); // Available environments: https://developer.mypurecloud.com/api/rest/index.html
@@ -15,13 +15,13 @@ client.loginClientCredentialsGrant(clientId, clientSecret).then(()=> {
   console.log('Connected!');
   
   // Show all queues
-  //getAllQueues();
+  getAllQueues();
 
   // Get EWT from a specific queue id
   //getEWT('c88937af-df4f-47cf-80e3-a6739afa65b5');
 
   // Create a callback on a specific queue id at a specific date
-  createCallback('c88937af-df4f-47cf-80e3-a6739afa65b5', 'Pierrick', ['+33680854089'], new Date("2020-03-12T15:30:00.000Z"));
+  //createCallback('c88937af-df4f-47cf-80e3-a6739afa65b5', 'Pierrick', ['+33680854089'], new Date("2020-03-12T15:30:00.000Z"));
 
 }).catch((err) => {
   // Handle failure response
